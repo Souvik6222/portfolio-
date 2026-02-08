@@ -13,48 +13,52 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
-      title: "Developer Portfolio",
+      title: "RAG-Based AI Chrome Extension",
       description:
-        "A personal portfolio website showcasing projects, skills, and contact information.",
-      tags: ["Portfolio", "Fullstack", "Personal"],
-      github: "https://github.com/NotStark/portfolio",
-      image: "/projects/portfolio-screenshot.png",
-      live: env.NEXT_PUBLIC_APP_URL,
-      date: "Sep, 2025",
-      status: "completed",
-    },
-    {
-      title: "Telegram Bot",
-      description: "A telegram group management bot built with Pyrogram.",
-      tags: ["Bot", "Management", "Telegram"],
-      github: "https://github.com/Notstark/TelegramBot",
-      image: "/projects/telegrambot-screenshot.png",
-      live: "https://t.me/HyugaGuardianBot",
-      date: "Oct, 2024",
-      status: "completed",
-    },
-    {
-      title: "Anime Edge",
-      description:
-        "A feature-rich anime streaming platform built with Next.js, offering fast search, curated collections, and a smooth viewing experience.",
-      tags: ["Anime", "Streaming", "Fullstack"],
-      github: null,
-      image: "/projects/animeedge-screenshot.png",
+        "An intelligent Chrome extension that uses RAG (Retrieval-Augmented Generation) to provide AI-powered insights and summaries for any YouTube video. Built with LangChain and modern AI technologies.",
+      tags: ["AI/ML", "RAG", "Chrome Extension", "LangChain"],
+      github: "https://github.com/Souvik6222/own_project",
+      image: "https://kairntech.com/wp-content/uploads/2025/03/rag-chatbot-trustworthy-ai-2.jpg",
       live: null,
-      date: "Dec, 2024",
+      date: "Jan, 2026",
+      status: "completed",
+    },
+    {
+      title: "Perplexity Clone",
+      description: "A modern frontend clone of Perplexity AI search engine, featuring a clean UI, real-time search capabilities, and responsive design built with React and TypeScript.",
+      tags: ["Frontend", "React", "TypeScript", "AI"],
+      github: "https://github.com/Souvik6222/perplexity",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd-y3jYuGXp_Nl3MvRvaSUcGSMuRT_dZplVw&s",
+      live: "https://perplexity-sable.vercel.app",
+      date: "Dec, 2025",
+      status: "completed",
+    },
+    {
+      title: "ML & Kaggle Projects",
+      description:
+        "A collection of machine learning projects and Kaggle competition solutions, showcasing expertise in data science, predictive modeling, and advanced ML algorithms.",
+      tags: ["Machine Learning", "Kaggle", "Python", "Data Science"],
+      github: "https://github.com/Souvik6222/kaggle_competitions_",
+      image: "/projects/telegrambot-screenshot.png",
+      live: null,
+      date: "2024-2026",
       status: "completed",
     },
   ];
 
   const tagColors = {
-    Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30",
-    Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30",
-    Personal: "bg-purple-500/10 text-purple-600 border-purple-500/30",
-    Telegram: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
-    Management: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30",
-    Bot: "bg-teal-500/10 text-teal-600 border-teal-500/30",
-    Anime: "bg-pink-500/10 text-pink-600 border-pink-500/30",
-    Streaming: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
+    "AI/ML": "bg-purple-500/10 text-purple-600 border-purple-500/30",
+    RAG: "bg-blue-500/10 text-blue-600 border-blue-500/30",
+    "Chrome Extension": "bg-green-500/10 text-green-600 border-green-500/30",
+    LangChain: "bg-orange-500/10 text-orange-600 border-orange-500/30",
+    Frontend: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
+    React: "bg-sky-500/10 text-sky-600 border-sky-500/30",
+    TypeScript: "bg-blue-600/10 text-blue-700 border-blue-600/30",
+    AI: "bg-violet-500/10 text-violet-600 border-violet-500/30",
+    "Machine Learning": "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
+    Kaggle: "bg-teal-500/10 text-teal-600 border-teal-500/30",
+    Python: "bg-yellow-500/10 text-yellow-700 border-yellow-500/30",
+    "Data Science": "bg-pink-500/10 text-pink-600 border-pink-500/30",
   };
 
   return (

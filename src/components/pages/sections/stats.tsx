@@ -51,7 +51,7 @@ import { BackgroundGridAnimated } from "@/components/shared/backgrounds";
 import { useTheme } from "next-themes";
 import dayjs from "dayjs";
 
-const GITHUB_JOIN_YEAR = 2023;
+const GITHUB_JOIN_YEAR = 2025;
 
 const TAB_CONTENT = [
   { title: "Overview", icon: BarChart3 },
@@ -578,10 +578,10 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
 
   const prClosedPercentage = data?.pullRequests.total
     ? Math.round(
-        ((data.pullRequests.closed + data.pullRequests.merged) /
-          data.pullRequests.total) *
-          100,
-      )
+      ((data.pullRequests.closed + data.pullRequests.merged) /
+        data.pullRequests.total) *
+      100,
+    )
     : 0;
 
   const issuesClosedPercentage = data?.issues.total
@@ -645,7 +645,7 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
 
       {/* Metrics Grid */}
       <div className="grid gap-4 md:grid-cols-2">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

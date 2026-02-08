@@ -57,11 +57,11 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       t: number;
     } | null>(null);
 
-  
+
     const [playEatFood] = useSoundCustom("/sfx/food.mp3", { volume: 0.5 });
     const [playBackground, { stop: stopBackground }] = useSoundCustom(
       "/sfx/snake-background.mp3",
-      { volume: 0.25 , loop: true }, 
+      { volume: 0.25, loop: true },
     );
 
     const directionRef = useRef<Direction>("right");
@@ -187,25 +187,26 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       if (!willGrow) newSnake.pop();
 
       if (willGrow) {
-        playEatFood();            
+        playEatFood();
         animateFlash(newHead.x, newHead.y);
         navigator.vibrate?.(20);
 
         const newFood = placeFood(newSnake, cols, rows);
         setFood(newFood);
 
-        setScore((prev) => {
-          const newScore = prev + 1;
-          if (newScore > (highScore ?? 0)) {
-            setHighScore(newScore);
-            newBestRef.current = true;
-          }
-          return newScore;
-        });
+        setScore((prev) => prev + 1);
       }
 
       setSnake(newSnake);
-    }, [gridConfig, placeFood, animateFlash, highScore, setHighScore]);
+    }, [gridConfig, placeFood, animateFlash]);
+
+    // Update high score when score changes
+    useEffect(() => {
+      if (score > (highScore ?? 0)) {
+        setHighScore(score);
+        newBestRef.current = true;
+      }
+    }, [score, highScore, setHighScore]);
 
     const restart = useCallback(() => {
       initGame();
@@ -249,14 +250,14 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       }
     }, [dims.w, dims.h]);
 
-    
+
     useEffect(() => {
       if (!gameOver) {
         playBackground();
       } else {
-        stopBackground(); 
+        stopBackground();
       }
-      return () => stopBackground(); 
+      return () => stopBackground();
     }, [gameOver, playBackground, stopBackground]);
 
     // Game loop

@@ -11,7 +11,7 @@ import { Send, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import SectionHeading from "@/components/section-heading";
 
- // TODO Store in DB
+// TODO Store in DB
 
 export default function Contact() {
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ export default function Contact() {
   const canSend = email.trim().length > 3 && message.trim().length > 4;
 
   const onSubmit = async (e: React.FormEvent) => {
-   
+
     e.preventDefault();
     if (!canSend) return;
     try {
@@ -65,6 +65,60 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl">
+        {/* Contact Info Cards */}
+        <div className="mb-8 grid gap-4 md:grid-cols-2">
+          {/* Email Card */}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="bg-muted/30 group relative overflow-hidden rounded-xl border-2 p-6 transition-all hover:border-emerald-400/50 hover:shadow-lg hover:shadow-emerald-400/10"
+          >
+            <div className="relative z-10">
+              <div className="mb-3 flex items-center gap-3">
+                <div className="bg-emerald-400/10 rounded-lg border-2 border-emerald-400/30 p-3">
+                  <Send className="h-5 w-5 text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Email Me</h3>
+                  <p className="text-muted-foreground text-xs">Quick response guaranteed</p>
+                </div>
+              </div>
+              <p className="font-mono text-sm text-emerald-400">{siteConfig.email}</p>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          </a>
+
+          {/* Phone Card */}
+          <a
+            href="tel:+919733064817"
+            className="bg-muted/30 group relative overflow-hidden rounded-xl border-2 p-6 transition-all hover:border-sky-400/50 hover:shadow-lg hover:shadow-sky-400/10"
+          >
+            <div className="relative z-10">
+              <div className="mb-3 flex items-center gap-3">
+                <div className="bg-sky-400/10 rounded-lg border-2 border-sky-400/30 p-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-sky-400"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Call Me</h3>
+                  <p className="text-muted-foreground text-xs">Let's discuss your project</p>
+                </div>
+              </div>
+              <p className="font-mono text-sm text-sky-400">+91 9733064817</p>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-400/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          </a>
+        </div>
+
         <div className="">
           <form onSubmit={onSubmit} className="w-full">
             <Terminal className="max-h-none w-full max-w-none">
@@ -75,8 +129,7 @@ export default function Contact() {
                   <div className="text-foreground/90 flex items-start gap-2 font-mono">
                     <span className="text-emerald-400">$</span>
                     <TypingAnimation startOnView duration={26}>
-                      Could you share your email with
-                      me?
+                      Hey there! 👋 Let's build something intelligent together. What's your email?
                     </TypingAnimation>
                   </div>
                   {/* A1 */}
@@ -105,7 +158,7 @@ export default function Contact() {
                   <div className="text-foreground/90 flex items-start gap-2 font-mono">
                     <span className="text-sky-400">$</span>
                     <TypingAnimation duration={26}>
-                      Great! And may i know your name?
+                      Perfect! And what should I call you?
                     </TypingAnimation>
                   </div>
 
@@ -115,7 +168,7 @@ export default function Contact() {
                       <span className="text-sky-400">↪</span>
                       <input
                         type="text"
-                        placeholder="Siddharth"
+                        placeholder="Your name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         onKeyDown={handleEnter}
@@ -133,7 +186,7 @@ export default function Contact() {
                   <div className="text-foreground/90 flex items-start gap-2 font-mono">
                     <span className="text-amber-400">$</span>
                     <TypingAnimation duration={26}>
-                      Awesome, now tell us how we can assist you today.
+                      Awesome! Got an AI project in mind? Tell me about it—chatbot, RAG app, or something else?
                     </TypingAnimation>
                   </div>
 
@@ -144,7 +197,7 @@ export default function Contact() {
                       <textarea
                         required
                         rows={4}
-                        placeholder="Tell me about your project, timeline, and goals…"
+                        placeholder="e.g., 'Need a RAG-based chatbot for customer support' or 'Looking to integrate AI into our product'..."
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         className="border-foreground/20 text-foreground placeholder:text-foreground/40 w-full resize-y rounded-md border bg-transparent px-3 py-2 outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/30"

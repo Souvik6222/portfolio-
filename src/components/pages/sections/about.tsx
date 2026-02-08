@@ -31,7 +31,7 @@ const About = () => {
           <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
             <div className="p-6">
               <p className="">
-                I build fast, friendly products that make users smile
+                I build smart, user-friendly AI products—especially chatbots and RAG apps
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-6 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -41,12 +41,11 @@ const About = () => {
                     />
                   </span>
                 </span>
-                —and sometimes their dogs too.
+                —that turn messy ideas into working features people can actually use.
               </p>
 
               <p className="">
-                Stack: Next.js, React, TypeScript, Tailwind. Clean APIs, tiny
-                micro‑interactions, big delight
+                Stack: React, Next.js, TypeScript, Node.js, LangChain, Vector DBs (Chroma/FAISS)
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -56,11 +55,11 @@ const About = () => {
                     />
                   </span>
                 </span>
-                .
+                . Clean APIs, simple UIs, and reliable AI workflows.
               </p>
 
               <p className="">
-                Off‑duty: coffee, sketching animations, and One Piece marathons
+                Focus: Building AI-powered tools like YouTube Q&A bots, document chat, and resume–JD matchers
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -74,8 +73,7 @@ const About = () => {
               </p>
 
               <p className="">
-                Best in small teams: quick loops, clear comms, high‑fives after
-                deploy
+                Team fit: I work best in small teams—fast feedback loops, clear communication, and shipping early
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -91,17 +89,17 @@ const About = () => {
               </p>
 
               <p>
-                Got a messy brief or a half‑baked idea?
+                Got a rough idea for an AI feature?
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
-                      src={"/gifs/kirby%20confused.gif"}
+                      src="/gifs/kirby%20confused.gif"
                       className="h-auto w-full object-cover object-center"
                       alt="kirby confused but ready"
                     />
                   </span>
                 </span>
-                Let’s turn it into something real.
+                Let's make it real.
               </p>
             </div>
 
@@ -143,16 +141,16 @@ const About = () => {
                 <div className="text-center">
                   <div className="border-foreground/20 bg-muted/20 mb-4 overflow-hidden rounded-lg border-2 border-dashed p-4">
                     <img
-                      src="/ascii-art-profile.png"
-                      alt="ASCII"
-                      className="-mb-5 h-auto w-full object-cover object-center dark:invert"
+                      src="/Gemini_Generated_Image_7i3x287i3x287i3x.png"
+                      alt="Souvik Profile"
+                      className="-mb-5 h-auto w-full object-cover object-center"
                     />
                   </div>
                   <h3 className="font-incognito text-2xl font-semibold">
-                    Siddharth
+                    Souvik
                   </h3>
                   <p className="text-foreground/60 mt-1 font-mono text-sm">
-                    @stark
+                    @souvik
                   </p>
 
                   {/* Status badges */}
@@ -176,8 +174,8 @@ const About = () => {
                         ? "Not Available"
                         : "Available"}
                     </Badge>
-                    <Badge variant="outline">2+ Years</Badge>
-                    <Badge variant="outline">Full-Stack</Badge>
+                    <Badge variant="outline">3+ Years</Badge>
+                    <Badge variant="outline">AI Developer</Badge>
                   </div>
                 </div>
               </div>

@@ -59,7 +59,7 @@ const Hero = () => {
               </div>
               <div className="h-px w-12 bg-[#e1e1e1]" />
               <span className="text-foreground/50 font-mono text-xs md:text-sm">
-                Full-Stack Developer
+                Software Developer (AI Focused)
               </span>
             </motion.div>
 
@@ -73,7 +73,7 @@ const Hero = () => {
               <span className="text-foreground">Hey, I&apos;m </span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Siddharth", "Stark"]}
+                  text={["Souvik"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -89,8 +89,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
             >
-              Fullstack developer with a passion for building web applications.
-              I specialize in React, Next.js, Node.js, and TypeScript.
+              Full-stack developer passionate about AI/ML, building intelligent chatbots and RAG-based applications using LangChain, React, Node.js, and TypeScript.
             </motion.p>
 
             <motion.div
@@ -127,22 +126,21 @@ const Hero = () => {
 
       {/*  Stats Grid */}
       <div className="relative">
-        <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
+        <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-3">
           {[
             {
-              label: "Portfolio views",
-              value: umamiStats?.data?.pageviews ?? 0,
+              label: "Kaggle grinder",
+              value: 6,
             },
-            { label: "Years of Experience", value: 2 },
-            { label: "Projects Shipped", value: 8 },
-            { label: "Happy Clients", value: 5 },
+            { label: "Years of Experience", value: 3 },
+            { label: "Projects", value: 8 },
           ].map((stat, i) => (
             <div
               key={i}
               className={cn(
                 "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
-                i !== 3 && "border-r",
-                i < 2 && "border-b lg:border-b-0",
+                i !== 2 && "border-r",
+                i < 1 && "border-b lg:border-b-0",
               )}
             >
               <div className="text-foreground mb-2 text-3xl font-bold">

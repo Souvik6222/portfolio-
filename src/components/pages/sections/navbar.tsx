@@ -23,11 +23,17 @@ type NavId = (typeof NAV_LINKS)[number]["id"];
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<NavId>("home");
+  const [mounted, setMounted] = useState(false);
   const { isSoundEnabled, toggleSoundEnabled } = useIsSoundEnabled();
   const { resolvedTheme, setTheme } = useTheme();
 
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const activeTabRef = useRef<HTMLAnchorElement | null>(null);
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Update active tab from URL hash
   useEffect(() => {
@@ -159,30 +165,34 @@ const Navbar = () => {
             <div className="bg-border h-4 w-px" />
 
             {/* Sound Toggle */}
-            <button
-              onClick={() => toggleSoundEnabled()}
-              className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
-              aria-label={isSoundEnabled ? "Mute sounds" : "Enable sounds"}
-            >
-              {isSoundEnabled ? (
-                <Volume2Icon className="size-5" />
-              ) : (
-                <VolumeXIcon className="size-5" />
-              )}
-            </button>
+            {mounted && (
+              <button
+                onClick={() => toggleSoundEnabled()}
+                className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
+                aria-label={isSoundEnabled ? "Mute sounds" : "Enable sounds"}
+              >
+                {isSoundEnabled ? (
+                  <Volume2Icon className="size-5" />
+                ) : (
+                  <VolumeXIcon className="size-5" />
+                )}
+              </button>
+            )}
 
             <div className="bg-border h-4 w-px" />
 
             {/* Theme Toggle */}
-            <button
-              onClick={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
-              }
-              className="transition-transform duration-200 hover:scale-110"
-              aria-label="Toggle theme"
-            >
-              <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
-            </button>
+            {mounted && (
+              <button
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
+                className="transition-transform duration-200 hover:scale-110"
+                aria-label="Toggle theme"
+              >
+                <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
+              </button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -302,34 +312,39 @@ const Navbar = () => {
                   </span>
                 </a>
 
-                <button
-                  onClick={() => toggleSoundEnabled()}
-                  className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
-                >
-                  {isSoundEnabled ? (
-                    <Volume2Icon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
-                  ) : (
-                    <VolumeXIcon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
-                  )}
-                  <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
-                    {isSoundEnabled ? "Sound" : "Muted"}
-                  </span>
-                </button>
 
-                <button
-                  onClick={() =>
-                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                  }
-                  className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
-                >
-                  <ThemeToggleButton2
-                    className="text-foreground/60 group-hover:text-foreground size-5"
-                    theme={resolvedTheme}
-                  />
-                  <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
-                    Theme
-                  </span>
-                </button>
+                {mounted && (
+                  <button
+                    onClick={() => toggleSoundEnabled()}
+                    className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
+                  >
+                    {isSoundEnabled ? (
+                      <Volume2Icon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
+                    ) : (
+                      <VolumeXIcon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
+                    )}
+                    <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
+                      {isSoundEnabled ? "Sound" : "Muted"}
+                    </span>
+                  </button>
+                )}
+
+                {mounted && (
+                  <button
+                    onClick={() =>
+                      setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                    }
+                    className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
+                  >
+                    <ThemeToggleButton2
+                      className="text-foreground/60 group-hover:text-foreground size-5"
+                      theme={resolvedTheme}
+                    />
+                    <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
+                      Theme
+                    </span>
+                  </button>
+                )}
               </div>
             </motion.div>
           </motion.div>
