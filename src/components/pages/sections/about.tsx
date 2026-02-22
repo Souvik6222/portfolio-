@@ -99,7 +99,7 @@ const About = () => {
                     />
                   </span>
                 </span>
-                Let's make it real.
+                Let&apos;s make it real.
               </p>
             </div>
 

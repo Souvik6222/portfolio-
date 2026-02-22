@@ -110,7 +110,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Call Me</h3>
-                  <p className="text-muted-foreground text-xs">Let's discuss your project</p>
+                  <p className="text-muted-foreground text-xs">Let&apos;s discuss your project</p>
                 </div>
               </div>
               <p className="font-mono text-sm text-sky-400">+91 9733064817</p>
@@ -129,7 +129,7 @@ export default function Contact() {
                   <div className="text-foreground/90 flex items-start gap-2 font-mono">
                     <span className="text-emerald-400">$</span>
                     <TypingAnimation startOnView duration={26}>
-                      Hey there! 👋 Let's build something intelligent together. What's your email?
+                      Hey there! 👋 Let&apos;s build something intelligent together. What&apos;s your email?
                     </TypingAnimation>
                   </div>
                   {/* A1 */}
