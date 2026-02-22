@@ -1,24 +1,39 @@
 # 🚀 Souvik's AI Portfolio
 
-A modern, interactive portfolio website featuring a RAG-based AI chatbot that answers questions about Souvik's specialized skills in AI/ML and RAG development.
+A modern, interactive AI-powered portfolio website featuring a **RAG-based chatbot** that answers questions about Souvik’s skills, projects, and experience in **AI/ML, GenAI, and RAG systems**.
 
 ![Portfolio Preview](screenshot.png)
 
-## 🛠️ Architecture
+---
 
-- **Frontend:** Next.js 15, React, Tailwind CSS, Framer Motion
-- **Backend:** Python FastAPI, LangChain, ChromaDB
-- **AI Model:** Google Gemini (via LangChain)
-- **Database:** SQLite (for Prisma), ChromaDB (for Vector Store)
+## 🛠️ Tech Stack & Architecture
+
+**Frontend**
+- Next.js 15  
+- React  
+- Tailwind CSS  
+- Framer Motion  
+
+**Backend**
+- Python FastAPI  
+- LangChain  
+- ChromaDB (Vector Store)
+
+**AI Model**
+- Google Gemini (via LangChain)
+
+**Database**
+- SQLite (Prisma)  
+- ChromaDB (Embeddings)
 
 ---
 
 ## 📋 Prerequisites
 
-- **Node.js** (v18+)
-- **Python** (v3.10+)
-- **Git**
-- **Google AI API Key** (Get it free: [aistudio.google.com](https://aistudio.google.com/apikey))
+- Node.js v18+  
+- Python v3.10+  
+- Git  
+- Google AI API Key: https://aistudio.google.com/apikey  
 
 ---
 
@@ -29,108 +44,104 @@ A modern, interactive portfolio website featuring a RAG-based AI chatbot that an
 ```bash
 git clone https://github.com/Souvik6222/unique.git
 cd unique
-```
+2️⃣ Backend Setup (AI Server) 🧠
+cd backend
 
-### 2️⃣ Backend Setup (The Brain) 🧠
+Create & activate virtual environment:
 
-The backend handles the AI chatbot logic.
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
 
-1.  Navigate to the backend folder:
-    ```bash
-    cd backend
-    ```
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
 
-2.  Create and activate virtual environment:
-    ```bash
-    # Windows
-    python -m venv venv
-    .\venv\Scripts\activate
+Install dependencies:
 
-    # Mac/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+pip install -r requirements.txt
 
-3.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Configure environment variables:
 
-4.  **Configure Environment:**
-    - Create a `.env` file in the `backend` folder.
-    - Add your Google API Key:
-      ```env
-      GOOGLE_API_KEY=your_actual_api_key_here
-      ```
+Create a .env file in backend:
 
-5.  **Start the Server:**
-    - You can use the provided script (Windows):
-      ```bash
-      start.bat
-      ```
-    - Or manual command:
-      ```bash
-      uvicorn main:app --reload --port 8000
-      ```
-    *Server will start at `http://localhost:8000`*
+GOOGLE_API_KEY=your_actual_api_key_here
 
-### 3️⃣ Frontend Setup (The Face) 🎨
+Run backend server:
 
-The frontend is the website itself.
+uvicorn main:app --reload --port 8000
 
-1.  Open a **new terminal** and navigate to the project root:
-    ```bash
-    cd ..  # If you are in backend folder
-    # or just open the root folder
-    ```
+Backend URL:
 
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
+http://localhost:8000
+3️⃣ Frontend Setup (UI) 🎨
+npm install
 
-3.  **Configure Environment:**
-    - Create a `.env` file in the root folder (copy from `.env.example` if available).
-    - Add necessary keys (GitHub token optional for stats):
-      ```env
-      NEXT_PUBLIC_GITHUB_USERNAME="Souvik6222"
-      GITHUB_TOKEN="your_github_token" # Optional, for higher rate limits
-      ```
+Create .env file in root:
 
-4.  **Start the Development Server:**
-    ```bash
-    npm run dev -- -p 4000
-    ```
+NEXT_PUBLIC_GITHUB_USERNAME="Souvik6222"
+GITHUB_TOKEN="your_github_token"  # Optional
 
-5.   **Open your browser:**
-    - Go to **[http://localhost:4000](http://localhost:4000)**
+Run frontend:
 
----
+npm run dev -- -p 4000
 
-## 🤖 Using the AI Chatbot
+Open:
 
-1.  Ensure **BOTH** servers are running (Frontend on 4000, Backend on 8000).
-2.  Click the **Sparkle/Chat Icon** in the bottom-right corner of the website.
-3.  Ask questions like:
-    - *"What is Souvik's experience with RAG?"*
-    - *"Tell me about his projects."*
-    - *"How can I contact him?"*
+http://localhost:4000
+🤖 AI Chatbot Usage
 
-## 📝 Editing Content
+Ensure both servers are running
 
-- **Portfolio Content:** Edit files in `src/components/pages/sections/`.
-- **Chatbot Knowledge:** Edit `backend/knowledge_base.txt`. The chatbot learns from this file!
+Click the chat icon on the website
 
----
+Example questions:
 
-## 🚀 Deployment
+What is Souvik’s experience with RAG?
 
-- **Frontend:** Deploy to [Vercel](https://vercel.com) (Recommended).
-- **Backend:** Deploy to [Railway](https://railway.app) or [Render](https://render.com).
-    - *Note: You'll need to update the API URL in `src/components/ai-chat-widget.tsx` to point to your deployed backend URL.*
+Tell me about his AI projects
 
----
+How can I contact him?
 
-## 🤝 Contributing
+📝 Customization
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Portfolio sections:
+
+src/components/pages/sections/
+
+Chatbot knowledge:
+
+backend/knowledge_base.txt
+🚀 Deployment
+
+Frontend:
+
+Vercel → https://vercel.com
+
+Backend:
+
+Railway → https://railway.app
+
+Render → https://render.com
+
+Update backend API URL in:
+
+src/components/ai-chat-widget.tsx
+🤝 Contributing
+
+Pull requests are welcome.
+Open an issue for major feature requests.
+
+⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
+
+✅ Push README to GitHub
+git add README.md
+git commit -m "Improve README documentation"
+git push origin main
+
+If you want, I can next:
+- Add **badges + demo link**
+- Write a **perfect GitHub repo description**
+- Or make a **deployment README for hackathons** 🏆
