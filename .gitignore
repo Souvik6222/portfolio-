@@ -41,3 +41,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# backend
+backend/venv/
+backend/__pycache__/
+backend/chroma_db/
+__pycache__/
+
+# unique folder (old/duplicate project files)
+unique/
+

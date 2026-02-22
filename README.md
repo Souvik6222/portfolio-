@@ -1,102 +1,136 @@
+# 🚀 Souvik's AI Portfolio
 
-# Stark's Portfolio
+A modern, interactive portfolio website featuring a RAG-based AI chatbot that answers questions about Souvik's specialized skills in AI/ML and RAG development.
 
-![Portfolio Screenshot](public/projects/portfolio-screenshot.png)
+![Portfolio Preview](screenshot.png)
 
-A modern, interactive **[developer portfolio](https://next-portfolio-stark.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
+## 🛠️ Architecture
 
-> This portfolio showcases my work, my projects, and my personality
-
----
-
-## Tech Stack
-
-**Framework & Runtime**
-- [Next.js 15](https://nextjs.org/) — UI Framework
-- [TypeScript 5](https://www.typescriptlang.org/) — For type safety
-
-**Styling & UI**
-- [Tailwind CSS 4](https://tailwindcss.com/) — For Styling
-- [shadcn/ui](https://ui.shadcn.com/) — for accessible components
-- [Lucide Icons](https://lucide.dev/) — for Icon
-- [Framer Motion (motion)](https://motion.dev/) — for animation
-
-**Backend & Data**
-- [Prisma ORM 6](https://www.prisma.io/) 
-- [Better Auth](https://better-auth.dev/)
-- [Zod](https://zod.dev/) — for runtime schema validation
-- [Umami](https://umami.is/) — Analytics
-
-**State & Utilities**
-- [Zustand](https://github.com/pmndrs/zustand)
-- [TanStack Query](https://tanstack.com/query)
-- [Day.js](https://day.js.org/)
-- [Lodash](https://lodash.com/)
+- **Frontend:** Next.js 15, React, Tailwind CSS, Framer Motion
+- **Backend:** Python FastAPI, LangChain, ChromaDB
+- **AI Model:** Google Gemini (via LangChain)
+- **Database:** SQLite (for Prisma), ChromaDB (for Vector Store)
 
 ---
 
+## 📋 Prerequisites
 
-## Run Project Locally
+- **Node.js** (v18+)
+- **Python** (v3.10+)
+- **Git**
+- **Google AI API Key** (Get it free: [aistudio.google.com](https://aistudio.google.com/apikey))
 
-### Clone the repository
+---
+
+## ⚡ Quick Start Guide
+
+### 1️⃣ Clone the Repository
+
 ```bash
-git clone https://github.com/NotStark/portfolio.git
-cd portfolio
-````
-
-### Install dependencies 
-
-```bash
-npm install
+git clone https://github.com/Souvik6222/unique.git
+cd unique
 ```
 
-### Set up environment variables
+### 2️⃣ Backend Setup (The Brain) 🧠
 
-Create a `.env` & copy the variables from `.env.example` file in the root and configure it.
+The backend handles the AI chatbot logic.
 
-### Generate Prisma Client
+1.  Navigate to the backend folder:
+    ```bash
+    cd backend
+    ```
 
-```bash
-npx prisma generate
-```
+2.  Create and activate virtual environment:
+    ```bash
+    # Windows
+    python -m venv venv
+    .\venv\Scripts\activate
 
-### Run the development server
+    # Mac/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-```bash
-npm run dev
-```
+3.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-> Your portfolio should now be live at **[http://localhost:3000](http://localhost:3000)** 🎉
+4.  **Configure Environment:**
+    - Create a `.env` file in the `backend` folder.
+    - Add your Google API Key:
+      ```env
+      GOOGLE_API_KEY=your_actual_api_key_here
+      ```
+
+5.  **Start the Server:**
+    - You can use the provided script (Windows):
+      ```bash
+      start.bat
+      ```
+    - Or manual command:
+      ```bash
+      uvicorn main:app --reload --port 8000
+      ```
+    *Server will start at `http://localhost:8000`*
+
+### 3️⃣ Frontend Setup (The Face) 🎨
+
+The frontend is the website itself.
+
+1.  Open a **new terminal** and navigate to the project root:
+    ```bash
+    cd ..  # If you are in backend folder
+    # or just open the root folder
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  **Configure Environment:**
+    - Create a `.env` file in the root folder (copy from `.env.example` if available).
+    - Add necessary keys (GitHub token optional for stats):
+      ```env
+      NEXT_PUBLIC_GITHUB_USERNAME="Souvik6222"
+      GITHUB_TOKEN="your_github_token" # Optional, for higher rate limits
+      ```
+
+4.  **Start the Development Server:**
+    ```bash
+    npm run dev -- -p 4000
+    ```
+
+5.   **Open your browser:**
+    - Go to **[http://localhost:4000](http://localhost:4000)**
 
 ---
 
-## Deployment
+## 🤖 Using the AI Chatbot
 
-Deployed easily via [Vercel](https://vercel.com/) (recommended).
+1.  Ensure **BOTH** servers are running (Frontend on 4000, Backend on 8000).
+2.  Click the **Sparkle/Chat Icon** in the bottom-right corner of the website.
+3.  Ask questions like:
+    - *"What is Souvik's experience with RAG?"*
+    - *"Tell me about his projects."*
+    - *"How can I contact him?"*
 
-1. Connect your GitHub repository.
-2. Add your environment variables in the Vercel dashboard.
-3. Deploy → done!
+## 📝 Editing Content
+
+- **Portfolio Content:** Edit files in `src/components/pages/sections/`.
+- **Chatbot Knowledge:** Edit `backend/knowledge_base.txt`. The chatbot learns from this file!
 
 ---
 
-## Connect With Me
+## 🚀 Deployment
 
-| Platform     | Link                                                             |
-| ------------ | ---------------------------------------------------------------- |
-| 💬 Telegram  | [https://t.me/EternalVortex](https://t.me/EternalVortex)      
-| 🐦 Twitter   | [https://twitter.com/NotStark101](https://twitter.com/NotStark101) |         |
-| 💻 Discord   | `_notstark`                                            |
-              
+- **Frontend:** Deploy to [Vercel](https://vercel.com) (Recommended).
+- **Backend:** Deploy to [Railway](https://railway.app) or [Render](https://render.com).
+    - *Note: You'll need to update the API URL in `src/components/ai-chat-widget.tsx` to point to your deployed backend URL.*
+
 ---
 
+## 🤝 Contributing
 
-
-## Star History
-**⭐ If you liked this project, give it a star — it helps a lot!**
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date" />
-</picture>
-
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

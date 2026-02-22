@@ -9,6 +9,7 @@ import Footer from "./sections/footer";
 import Contact from "./sections/contact";
 import Stats from "./sections/stats";
 import { Testimonials } from "./sections/testimonials";
+import { AIChatWidget } from "../ai-chat-widget";
 
 const PortfolioPage = () => {
   return (
@@ -36,6 +37,9 @@ const PortfolioPage = () => {
             </div>
           </div>
         </main>
+
+        {/* AI Chat Widget */}
+        <AIChatWidget />
       </div>
     </>
   );

@@ -126,25 +126,25 @@ const Hero = () => {
 
       {/*  Stats Grid */}
       <div className="relative">
-        <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-3">
+        <div className="grid grid-cols-2 border md:max-w-full md:border-0 md:border-t md:border-r lg:grid-cols-4">
           {[
-            {
-              label: "Kaggle grinder",
-              value: 6,
-            },
+            { label: "Kaggle grinder", value: 6 },
             { label: "Years of Experience", value: 3 },
             { label: "Projects", value: 8 },
+            { label: "College", value: 1, suffix: "st Year" },
           ].map((stat, i) => (
             <div
               key={i}
               className={cn(
                 "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
-                i !== 2 && "border-r",
-                i < 1 && "border-b lg:border-b-0",
+                i % 2 === 0 && "border-r lg:border-r-0",
+                i !== 3 && "lg:border-r",
+                i < 2 && "border-b lg:border-b-0"
               )}
             >
-              <div className="text-foreground mb-2 text-3xl font-bold">
-                <NumberTicker value={stat.value} />+
+              <div className="text-foreground mb-2 flex flex-row items-center justify-center text-3xl font-bold">
+                <NumberTicker value={stat.value} />
+                <span>{stat.suffix ? stat.suffix : "+"}</span>
               </div>
               <div className="text-foreground/50 font-mono text-xs tracking-wider uppercase">
                 {stat.label}

@@ -1,0 +1,140 @@
+SOUVIK – AI DEVELOPER PORTFOLIO KNOWLEDGE BASE
+
+PERSONAL INFORMATION
+Name: Souvik
+Role: Software Developer (AI Focused)
+Username: @souvik
+GitHub: Souvik6222
+Email: souvik.biswas.cg@gmail.com
+
+Phone: +91 9733064817
+Experience: 3+ Years
+Location: India
+Education: Student at Swaminarayan University (Coding Gita)
+Website: Personal portfolio website created and maintained by Souvik
+
+PROFESSIONAL SUMMARY
+Souvik is a Software Developer with 3+ years of experience, specializing in AI and Machine Learning. He builds smart, user-friendly AI products—especially chatbots and RAG (Retrieval-Augmented Generation) applications—that turn messy ideas into working features people can actually use.
+
+He is a RAG-based AI developer with knowledge of Machine Learning, Deep Learning, and modern AI frameworks. He focuses on building real-world AI products rather than only experimental notebooks or demos. He learns fast and ships features quickly.
+
+CAREER GOALS
+Souvik is actively targeting roles such as Full Stack AI Developer, GenAI Developer, and AI Intern.
+
+TECHNICAL SKILLS
+
+AI AND ML STACK
+LangChain (RAG applications, chatbot development)
+Vector Databases (Chroma, FAISS)
+Machine Learning frameworks
+Deep Learning fundamentals
+Natural Language Processing
+Retrieval-Augmented Generation (RAG)
+AI model integration
+
+WEB DEVELOPMENT
+Frontend: React, Next.js, TypeScript
+Backend: Node.js, Python, FastAPI
+State Management: Modern React patterns
+Styling: Tailwind CSS, Modern CSS
+
+LANGUAGES AND TOOLS
+TypeScript
+Python
+JavaScript
+Git and GitHub
+API Development
+Database Management
+
+KEY PROJECTS
+
+RAG-BASED AI CHROME EXTENSION
+Description: An intelligent Chrome extension that uses RAG (Retrieval-Augmented Generation) to provide AI-powered insights and summaries for any YouTube video.
+Technologies: AI/ML, RAG, Chrome Extension, LangChain
+Features: Real-time video analysis, context-aware Q&A, smart summarization
+Status: Completed (January 2026)
+GitHub: https://github.com/Souvik6222/own_project
+
+PERPLEXITY CLONE
+Description: Modern frontend clone of Perplexity AI search engine demonstrating advanced UI/UX skills.
+Technologies: Frontend, React, TypeScript, AI
+Features: Clean interface, responsive design, modern search experience
+Status: Completed (January 2026)
+
+ML AND KAGGLE PROJECTS
+Description: Collection of Machine Learning projects and Kaggle competition solutions.
+Technologies: Machine Learning, Kaggle, Python, Data Science
+Expertise: Data analysis, model training, competitive ML
+Kaggle Experience: 6+ years as a Kaggle grinder
+Status: Ongoing
+
+PROFESSIONAL ACHIEVEMENTS
+6+ years of Kaggle experience
+3+ years of professional software development
+8+ completed projects
+Specialist in AI and ML chatbot development
+Expert in RAG application architecture
+
+EXPERTISE AREAS
+
+CHATBOT DEVELOPMENT
+Souvik specializes in building intelligent chatbots that understand context and provide meaningful responses. He uses modern AI frameworks like LangChain to create conversational AI that works in real-world scenarios.
+
+RAG APPLICATIONS
+Souvik is an expert in Retrieval-Augmented Generation (RAG), combining large language models with external knowledge bases to provide accurate, context-aware responses. He builds RAG systems for document Q&A, video analysis, knowledge base chatbots, and website chatbots.
+
+FULL-STACK AI INTEGRATION
+Souvik builds complete AI-powered applications end-to-end, including backend APIs with Python and FastAPI, frontend interfaces with React and Next.js, vector database integration with Chroma or FAISS, LLM orchestration with LangChain, and production-ready deployment pipelines.
+
+RAG USE CASES WORKED ON
+YouTube video Q&A systems
+Knowledge base chatbots
+Website chatbots
+
+STRONGEST AREA IN RAG
+Souvik is strongest at building complete end-to-end RAG pipelines including API development, frontend integration, vector database setup, and LLM orchestration.
+
+AI MODEL AND API PREFERENCE
+Souvik uses both free and open-source models as well as paid APIs like OpenAI or Gemini when needed, depending on project requirements, performance needs, and budget constraints.
+
+PREFERRED TECH STACK FOR AI APPLICATIONS
+FastAPI for backend
+LangChain for LLM orchestration
+Chroma for vector database
+Next.js for frontend
+
+DEVELOPMENT PHILOSOPHY
+Souvik focuses on building clean APIs that are easy to integrate, simple and intuitive user interfaces, reliable AI workflows that work consistently, and practical real-world solutions over theoretical complexity. He follows a user-centric approach in design and implementation.
+
+TECH STACK SUMMARY
+Primary Stack: React, Next.js, TypeScript, Node.js, LangChain, Vector Databases (Chroma and FAISS)
+AI and ML: LangChain, RAG systems, NLP, Machine Learning, Deep Learning fundamentals
+Tools: Git, GitHub, modern development workflows
+
+CONTACT INFORMATION
+For collaboration, job opportunities, or AI and ML consulting:
+Email: souvik.biswas.cg@gmail.com
+
+Phone: +91 9733064817
+GitHub: https://github.com/Souvik6222
+
+Portfolio: Personal portfolio website
+
+AVAILABILITY
+Souvik is currently available for AI and ML consulting projects, RAG application development, chatbot development, full-stack AI solutions, freelance opportunities, and full-time positions.
+
+INTERESTS
+Building intelligent conversational AI
+Exploring new RAG architectures
+Machine Learning competitions on Kaggle
+Open-source AI projects
+Modern web development
+AI-powered user experiences
+
+NOTABLE SKILLS
+Rapid prototyping of AI solutions
+Vector database optimization
+LangChain ecosystem expertise
+Production LLM deployment
+Frontend and backend integration
+API design and development

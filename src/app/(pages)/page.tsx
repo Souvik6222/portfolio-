@@ -1,8 +1,8 @@
-import HomePage from "@/components/pages/home";
+import PortfolioPage from "@/components/pages/portfolio";
 import React from "react";
 
 const Page = () => {
-  return <HomePage />;
+  return <PortfolioPage />;
 };
 
 export default Page;

@@ -31,7 +31,7 @@ const Noise: React.FC<NoiseProps> = ({
     let frame = 0;
     let animationId: number;
 
-    const canvasSize = 1024;
+    const canvasSize = patternSize || 250;
 
     const resize = () => {
       if (!canvas) return;
@@ -42,10 +42,12 @@ const Noise: React.FC<NoiseProps> = ({
       canvas.style.height = '100vh';
     };
 
-    const drawGrain = () => {
+    // Pre-generate noise frames to avoid expensive CPU operations on every frame
+    const noiseFrames: ImageData[] = [];
+    const numFrames = 8;
+    for (let f = 0; f < numFrames; f++) {
       const imageData = ctx.createImageData(canvasSize, canvasSize);
       const data = imageData.data;
-
       for (let i = 0; i < data.length; i += 4) {
         const value = Math.random() * 255;
         data[i] = value;
@@ -53,13 +55,13 @@ const Noise: React.FC<NoiseProps> = ({
         data[i + 2] = value;
         data[i + 3] = patternAlpha;
       }
-
-      ctx.putImageData(imageData, 0, 0);
-    };
+      noiseFrames.push(imageData);
+    }
 
     const loop = () => {
       if (frame % patternRefreshInterval === 0) {
-        drawGrain();
+        const currentFrame = noiseFrames[(frame / patternRefreshInterval) % numFrames];
+        ctx.putImageData(currentFrame, 0, 0);
       }
       frame++;
       animationId = window.requestAnimationFrame(loop);
@@ -77,7 +79,7 @@ const Noise: React.FC<NoiseProps> = ({
 
   return (
     <canvas
-      className={cn("pointer-events-none absolute top-0 left-0 h-screen w-screen" , className)}
+      className={cn("pointer-events-none absolute top-0 left-0 h-screen w-screen", className)}
       ref={grainRef}
       style={{
         imageRendering: 'pixelated'
